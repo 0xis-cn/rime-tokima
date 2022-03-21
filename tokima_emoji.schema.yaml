@@ -1,0 +1,42 @@
+# Rime schema
+# encoding: utf-8
+#
+
+schema:
+  schema_id: tokima_emoji
+  name: 🗣️🌍 toki ma
+  version: "0.1"
+  author:
+    - 物灵 <thematling@outlook.com> 
+  description: |
+    👋📝📍💻📝Emoji⏹️🗣️🌍❗
+    o lika an kanputa e lika Emoji pi toki ma a!
+engine:
+  processors:
+    - ascii_composer
+    - speller
+    - selector
+    - punctuator
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - punct_translator
+    - script_translator
+
+translator:
+  dictionary: tokima_emoji
+
+punctuator:
+  half_shape: &symtable
+    ",": 🔸
+    ".": 🔶
+    "\'": 🔡
+  full_shape: *symtable
+
